@@ -1,0 +1,16 @@
+go 1.19
+
+use (
+	.
+	./controllers/greetings
+	./db
+	./db/file
+	./db/nosql
+	./handlers
+	./helpers
+	./middlewares
+	./models/nosql
+	./models/request
+	./models/response
+	./routes/greetings
+)
