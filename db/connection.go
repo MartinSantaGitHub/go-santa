@@ -29,7 +29,7 @@ func SetDataBaseConnector(dbType string) {
 
 		dbNoSql.Connect()
 
-		//DbConn = dbNoSql
+		DbConn = dbNoSql
 	case "File":
 		dbFile := new(df.DbFile)
 

@@ -45,4 +45,22 @@ func Greet(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(response)
 }
 
+/* GetNames gets the names */
+func GetNames(w http.ResponseWriter, r *http.Request) {
+	names, err := db.DbConn.GetNames()
+
+	if err != nil {
+		http.Error(w, "Cannot obtain the names: "+err.Error(), http.StatusInternalServerError)
+
+		return
+	}
+
+	response := res.Names{
+		Names: names,
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(response)
+}
+
 // endregion

@@ -94,6 +94,10 @@ func (db *DbFile) GetNames() ([]string, error) {
 	s = strings.TrimSpace(s)
 	names = strings.Split(s, "\n")
 
+	if len(names) == 1 && names[0] == "" {
+		names = nil
+	}
+
 	return names, nil
 }
 

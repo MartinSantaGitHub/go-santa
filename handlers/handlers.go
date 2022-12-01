@@ -25,6 +25,7 @@ func Handlers() {
 
 	// Register Greetings endpoints
 	greetings.Greet(router)
+	greetings.GetNames(router)
 
 	PORT := os.Getenv("PORT")
 	handler := cors.AllowAll().Handler(router)
