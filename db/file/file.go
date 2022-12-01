@@ -40,7 +40,7 @@ func (db *DbFile) IsConnection() bool {
 	_, err := os.Stat(db.FilePath)
 
 	if os.IsNotExist(err) {
-		log.Println("file does not exist: creating new file")
+		log.Println("file does not exist: creating new one")
 
 		return false
 	}
